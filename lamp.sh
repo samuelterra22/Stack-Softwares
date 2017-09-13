@@ -9,11 +9,11 @@ echo "########################################################"
 wget -bc "https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.9-1ubuntu16.04-amd64.deb"
 
 echo "########################################################"
-echo "           Instalndo Serviços LAMP                      "
+echo "               Instalndo Serviços LAMP                  "
 echo "########################################################"
 
 # Update the repository
-sudo add-apt-repository ppa:ondrej/php
+sudo add-apt-repository ppa:ondrej/php -y
 sudo apt-get update
 
 # Install Apache, Mysql and Apache
@@ -26,7 +26,7 @@ sudo a2enmod php7.1
 sudo a2enmod rewrite
 
 echo "########################################################"
-echo "		Configurando MYSQL - Password: 'root'             "
+echo "		   Configurando MYSQL - Password: 'root'          "
 echo "########################################################"
 
 # The following commands set the MySQL root password to root when you install the mysql-server package.
@@ -43,7 +43,7 @@ sudo service apache2 restart && service mysql restart > /dev/null
 sudo service mysql restart
 
 echo "########################################################"
-echo "		Instalando dependencias do python                 "
+echo "		     Instalando dependencias do python            "
 echo "########################################################"
 
 sudo apt-get update 
@@ -52,12 +52,20 @@ sudo pip install --upgrade pip
 sudo pip install setuptools
 sudo pip install MySQL-python
 
+echo "########################################################"
+echo "      Instalando (des)compactador de arquivos (zip)     "
+echo "########################################################"
+
 sudo apt-get -y -q install zip
+
+echo "########################################################"
+echo "           Instalando monitorador de processos          "
+echo "########################################################"
 
 sudo apt install htop
 
 echo "########################################################"
-echo "           Instalndo o SpeedTest                        "
+echo "                Instalndo o SpeedTest                   "
 echo "########################################################"
 
 wget -O speedtest "https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py"
@@ -65,29 +73,29 @@ sudo chmod +x speedtest
 sudo mv speedtest /usr/bin/speedtest
 
 echo "########################################################"
-echo "           Instalndo Git                                "
+echo "                   Instalndo Git                        "
 echo "########################################################"
 
-sudo apt-add-repository ppa:git-core/ppa
+sudo apt-add-repository ppa:git-core/ppa -y
 sudo apt-get update
 sudo apt-get install git
 
 echo "########################################################"
-echo "           Instalndo o Workbeanch                       "
+echo "               Instalando o Workbeanch                  "
 echo "########################################################"
 
 sudo dpkg -i mysql-workbench-community-6.3.9-1ubuntu16.04-amd64.deb
 sudo apt-get install -f
 
 echo "########################################################"
-echo "		Atualizando o sistema    		                  "
+echo "		           Atualizando o sistema                  "
 echo "########################################################"
 
 sudo apt-get update
 sudo apt-get -y dist-upgrade
 
 echo "########################################################"
-echo "		Limpando arquivos de instalação e cache           "
+echo "		   Limpando arquivos de instalação e cache        "
 echo "########################################################"
 
 sudo rm wget-log mysql-workbench-community-6.3.9-1ubuntu16.04-amd64.deb
