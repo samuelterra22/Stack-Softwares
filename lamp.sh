@@ -62,7 +62,7 @@ echo "########################################################"
 echo "           Instalando monitorador de processos          "
 echo "########################################################"
 
-sudo apt install htop
+sudo apt install -y htop
 
 echo "########################################################"
 echo "                Instalando o SpeedTest                   "
@@ -78,7 +78,16 @@ echo "########################################################"
 
 sudo apt-add-repository ppa:git-core/ppa -y
 sudo apt-get update
-sudo apt-get install git
+sudo apt-get install -y git
+
+echo "########################################################"
+echo "                   Instalando Composer                  "
+echo "########################################################"
+
+sudo apt-get update
+sudo apt-get -y install curl
+sudo curl -s https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
 
 echo "########################################################"
 echo "                   Instalando Spotify                   "
@@ -87,7 +96,7 @@ echo "########################################################"
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update
-sudo apt-get install spotify-client
+sudo apt-get install -y spotify-client
 
 echo "########################################################"
 echo "               Instalando o Workbeanch                  "
