@@ -9,7 +9,7 @@ echo "########################################################"
 wget -bc "https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.9-1ubuntu16.04-amd64.deb"
 
 echo "########################################################"
-echo "               Instalando Serviços LAMP                  "
+echo "               Instalando Serviços LAMP                 "
 echo "########################################################"
 
 # Update the repository
@@ -65,7 +65,7 @@ echo "########################################################"
 sudo apt install -y htop
 
 echo "########################################################"
-echo "                Instalando o SpeedTest                   "
+echo "                Instalando o SpeedTest                  "
 echo "########################################################"
 
 wget -O speedtest "https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py"
@@ -73,7 +73,7 @@ sudo chmod +x speedtest
 sudo mv speedtest /usr/bin/speedtest
 
 echo "########################################################"
-echo "                   Instalando Git                        "
+echo "                   Instalando Git                       "
 echo "########################################################"
 
 sudo apt-add-repository ppa:git-core/ppa -y
@@ -88,6 +88,12 @@ sudo apt-get update
 sudo apt-get -y install curl
 sudo curl -s https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
+
+echo "########################################################"
+echo "                   Instalando R                  "
+echo "########################################################"
+
+sudo apt install -f r-base-core
 
 echo "########################################################"
 echo "                   Instalando Spotify                   "
