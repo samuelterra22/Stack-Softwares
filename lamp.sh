@@ -9,14 +9,12 @@ echo "########################################################"
 wget -bc "https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.9-1ubuntu16.04-amd64.deb"
 
 echo "########################################################"
-echo "               Instalando Serviços LAMP                 "
+echo "               Instalando PHP e Apache                 "
 echo "########################################################"
 
-# Update the repository
 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt-get update
 
-# Install Apache, Mysql and Apache
 sudo apt-get install -y php7.1-mbstring php7.1-xml libapache2-mod-php php7.1-cli php7.1-common libapache2-mod-php7.1 php7.1 php7.1-mysql php7.1-fpm php7.1-curl php7.1-gd php7.1-bz2 apache2
 
 # Enable php7.1 module
@@ -30,7 +28,6 @@ echo "		   Configurando MYSQL - Password: 'root'          "
 echo "########################################################"
 
 # The following commands set the MySQL root password to root when you install the mysql-server package.
-
 echo "mysql-server-5.7 mysql-server/root_password password root" | debconf-set-selections
 echo "mysql-server-5.7 mysql-server/root_password_again password root" | debconf-set-selections
 sudo apt-get -y install mysql-server-5.7
@@ -38,6 +35,7 @@ sudo apt-get -y install mysql-server-5.7
 # Restart all services
 echo -e "\n"
 
+echo "Reiniciando Apache2 e Mysql"
 sudo service apache2 restart && service mysql restart > /dev/null
 
 sudo service mysql restart
