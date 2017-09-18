@@ -90,10 +90,20 @@ sudo curl -s https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 
 echo "########################################################"
-echo "                   Instalando R                  "
+echo "                   Instalando R                         "
 echo "########################################################"
 
 sudo apt install -f r-base-core
+
+
+echo "########################################################"
+echo "              Instalando Sublime-text                   "
+echo "########################################################"
+
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update
+sudo apt-get install sublime-text
 
 echo "########################################################"
 echo "                   Instalando Spotify                   "
