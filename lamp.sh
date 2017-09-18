@@ -17,22 +17,21 @@ sudo apt-get update
 
 sudo apt-get install -y php7.1-mbstring php7.1-xml libapache2-mod-php php7.1-cli php7.1-common libapache2-mod-php7.1 php7.1 php7.1-mysql php7.1-fpm php7.1-curl php7.1-gd php7.1-bz2 apache2
 
-# Enable php7.1 module
+# Ativando php7.1 module
 sudo a2enmod php7.1
 
-# Enable mod rewrite
+# Ativando mod rewrite
 sudo a2enmod rewrite
 
 echo "########################################################"
 echo "		   Configurando MYSQL - Password: 'root'          "
 echo "########################################################"
 
-# The following commands set the MySQL root password to root when you install the mysql-server package.
+# Seta o usuário e senha do MySQL para root
 echo "mysql-server-5.7 mysql-server/root_password password root" | debconf-set-selections
 echo "mysql-server-5.7 mysql-server/root_password_again password root" | debconf-set-selections
 sudo apt-get -y install mysql-server-5.7
 
-# Restart all services
 echo -e "\n"
 
 echo "Reiniciando Apache2 e Mysql"
@@ -136,8 +135,8 @@ sudo apt-get autoremove -y
 echo -e "\n"
 
 if [ $? -ne 0 ]; then
-   echo "Please Check the Install Services, There is some $(tput bold)$(tput setaf 1)Problem$(tput sgr0)"
+   echo "Verifique os serviços instalados, há alguns $(tput bold)$(tput setaf 1)problema$(tput sgr0)"
 else
-   echo "Installed Services run $(tput bold)$(tput setaf 2)Sucessfully$(tput sgr0)"
+   echo "Serviços instalados estão sendo executados com $(tput bold)$(tput setaf 2)sucesso$(tput sgr0)"
 fi
 
