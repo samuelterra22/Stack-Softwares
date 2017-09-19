@@ -51,12 +51,14 @@ echo "########################################################"
 echo "     Realzando download do PhpStorm em background       "
 echo "########################################################"
 
+# 261 Mb
 wget -bc -O "PhpStorm.tar.gz" "https://data.services.jetbrains.com/products/download?code=PS&platform=linux"
 
 echo "########################################################"
 echo "     Realzando download do PyCharm em background       "
 echo "########################################################"
 
+# 191 Mb
 wget -bc -O "PyCharm.tar.gz" "https://data.services.jetbrains.com/products/download?code=PCP&platform=linux"
 
 echo "########################################################"
@@ -173,16 +175,16 @@ echo "               Instalando o PhpStorm                  "
 echo "########################################################"
 
 tar -xzvf PhpStorm.tar.gz -C temp/
-mv foo/PhpStorm-* PhpStorm/
-mv PhpStorm/ /opt/
+mv temp/PhpStorm-* temp/PhpStorm/
+mv temp/PhpStorm/ /opt/
 
 echo "########################################################"
 echo "               Instalando o PyCharm                  "
 echo "########################################################"
 
 tar -xzvf PyCharm.tar.gz -C temp/
-mv foo/PhpStorm-* PyCharm/
-mv PyCharm/ /opt/
+mv temp/PhpStorm-* temp/PyCharm/
+mv temp/PyCharm/ /opt/
 
 echo "########################################################"
 echo "		           Atualizando o sistema                  "
