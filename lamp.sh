@@ -36,10 +36,28 @@ echo "Aperte qualquer tecla para continuar com a instalação ou CTRL+C para can
 read nothing
 
 echo "########################################################"
-echo "     Realzando download do Workbeanch em backgroud      "
+echo "              Criando pasta temporária                  "
 echo "########################################################"
 
-wget -bc "https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.9-1ubuntu16.04-amd64.deb"
+mkdir "temp/"
+
+echo "########################################################"
+echo "     Realzando download do Workbeanch em background     "
+echo "########################################################"
+
+wget -bc -O "Workbeanch.deb" "https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.9-1ubuntu16.04-amd64.deb"
+
+echo "########################################################"
+echo "     Realzando download do PhpStorm em background       "
+echo "########################################################"
+
+wget -bc -O "PhpStorm.tar.gz" "https://data.services.jetbrains.com/products/download?code=PS&platform=linux"
+
+echo "########################################################"
+echo "     Realzando download do PyCharm em background       "
+echo "########################################################"
+
+wget -bc -O "PyCharm.tar.gz" "https://data.services.jetbrains.com/products/download?code=PCP&platform=linux"
 
 echo "########################################################"
 echo "               Instalando PHP e Apache                 "
@@ -147,8 +165,24 @@ echo "########################################################"
 echo "               Instalando o Workbeanch                  "
 echo "########################################################"
 
-sudo dpkg -i mysql-workbench-community-6.3.9-1ubuntu16.04-amd64.deb
+sudo dpkg -i "Workbeanch.deb"
 sudo apt-get install -f
+
+echo "########################################################"
+echo "               Instalando o PhpStorm                  "
+echo "########################################################"
+
+tar -xzvf PhpStorm.tar.gz -C temp/
+mv foo/PhpStorm-* PhpStorm/
+mv PhpStorm/ /opt/
+
+echo "########################################################"
+echo "               Instalando o PyCharm                  "
+echo "########################################################"
+
+tar -xzvf PyCharm.tar.gz -C temp/
+mv foo/PhpStorm-* PyCharm/
+mv PyCharm/ /opt/
 
 echo "########################################################"
 echo "		           Atualizando o sistema                  "
@@ -161,7 +195,8 @@ echo "########################################################"
 echo "		   Limpando arquivos de instalação e cache        "
 echo "########################################################"
 
-sudo rm wget-log mysql-workbench-community-6.3.9-1ubuntu16.04-amd64.deb
+sudo rm -rf "temp/"
+sudo rm wget-log Workbeanch.deb
 sudo apt-get autoclean -y
 sudo apt-get autoremove -y
 
