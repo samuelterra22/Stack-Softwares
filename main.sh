@@ -190,7 +190,7 @@ echo "########################################################"
 
 tar -xzvf PhpStorm.tar.gz -C temp/
 mv temp/PhpStorm-* temp/PhpStorm/
-mv temp/PhpStorm/ /opt/
+sudo mv temp/PhpStorm/ /opt/
 
 echo "########################################################"
 echo "               Instalando o PyCharm                  "
@@ -198,7 +198,7 @@ echo "########################################################"
 
 tar -xzvf PyCharm.tar.gz -C temp/
 mv temp/PhpStorm-* temp/PyCharm/
-mv temp/PyCharm/ /opt/
+sudo mv temp/PyCharm/ /opt/
 
 echo "########################################################"
 echo "               Instalando o DataGrip                    "
@@ -206,7 +206,7 @@ echo "########################################################"
 
 tar -xzvf DataGrip.tar.gz -C temp/
 mv temp/DataGrip-* temp/DataGrip/
-mv temp/DataGrip/ /opt/
+sudo mv temp/DataGrip/ /opt/
 
 echo "########################################################"
 echo "		           Atualizando o sistema                  "
