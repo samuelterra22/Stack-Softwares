@@ -30,7 +30,9 @@ echo "#  * Composer                                          #"
 echo "#  * R                                                 #"
 echo "#  * Sublime-text                                      #"
 echo "#  * Spotify                                           #"
-echo "#                                                      #"
+echo "#  * PhpStorm                                          #"
+echo "#  * PyCharm                                           #"
+echo "#  * DataGrip                                          #"
 echo "#                                                      #"
 echo "########################################################"
 
@@ -44,24 +46,31 @@ echo "########################################################"
 mkdir "temp/"
 
 echo "########################################################"
-echo "     Realzando download do Workbeanch em background     "
+echo "     Realizando download do Workbeanch em background    "
 echo "########################################################"
 
 wget -bc -O "Workbeanch.deb" "https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.9-1ubuntu16.04-amd64.deb"
 
 echo "########################################################"
-echo "     Realzando download do PhpStorm em background       "
+echo "     Realizando download do PhpStorm em background      "
 echo "########################################################"
 
 # 261 Mb
 wget -bc -O "PhpStorm.tar.gz" "https://data.services.jetbrains.com/products/download?code=PS&platform=linux"
 
 echo "########################################################"
-echo "     Realzando download do PyCharm em background       "
+echo "     Realizando download do PyCharm em background       "
 echo "########################################################"
 
 # 191 Mb
 wget -bc -O "PyCharm.tar.gz" "https://data.services.jetbrains.com/products/download?code=PCP&platform=linux"
+
+echo "########################################################"
+echo "     Realizando download do DataGrip em background      "
+echo "########################################################"
+
+# 191 Mb
+wget -bc -O "DataGrip.tar.gz" "https://data.services.jetbrains.com/products/download?code=DG&platform=linux"
 
 echo "########################################################"
 echo "               Instalando PHP e Apache                 "
@@ -190,6 +199,14 @@ echo "########################################################"
 tar -xzvf PyCharm.tar.gz -C temp/
 mv temp/PhpStorm-* temp/PyCharm/
 mv temp/PyCharm/ /opt/
+
+echo "########################################################"
+echo "               Instalando o DataGrip                    "
+echo "########################################################"
+
+tar -xzvf DataGrip.tar.gz -C temp/
+mv temp/DataGrip-* temp/DataGrip/
+mv temp/DataGrip/ /opt/
 
 echo "########################################################"
 echo "		           Atualizando o sistema                  "
