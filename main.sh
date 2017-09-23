@@ -22,6 +22,8 @@ echo "#  * MySql Workbench                                   #"
 echo "#  * Python 3                                          #"
 echo "#  * htop                                              #"
 echo "#  * zip                                               #"
+echo "#  * rar                                               #"
+echo "#  * unrar                                             #"
 echo "#  * SpeedTest                                         #"
 echo "#  * Git                                               #"
 echo "#  * Composer                                          #"
@@ -103,10 +105,13 @@ sudo pip install setuptools
 sudo pip install MySQL-python
 
 echo "########################################################"
-echo "      Instalando (des)compactador de arquivos (zip)     "
+echo "     Instalando (des)compactadores de arquivos          "
+echo "     (zip, rar, unrar)                                  "
 echo "########################################################"
 
 sudo apt-get -y -q install zip
+sudo apt-get -y -q install rar
+sudo apt-get -y -q install unrar
 
 echo "########################################################"
 echo "           Instalando monitorador de processos          "
