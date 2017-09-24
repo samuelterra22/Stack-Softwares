@@ -179,6 +179,14 @@ sudo apt-get update
 sudo apt-get install -y spotify-client
 
 echo "########################################################"
+echo "                     Instalando Atom                    "
+echo "########################################################"
+
+sudo add-apt-repository ppa:webupd8team/atom -y
+sudo apt-get update
+sudo apt-get install atom -y
+
+echo "########################################################"
 echo "              Instalando Simple Weather                 "
 echo "########################################################"
 
