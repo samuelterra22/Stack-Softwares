@@ -33,6 +33,7 @@ echo "#  * Spotify                                           #"
 echo "#  * PhpStorm                                          #"
 echo "#  * PyCharm                                           #"
 echo "#  * DataGrip                                          #"
+echo "#  * Simple Weather                                                    #"
 echo "#                                                      #"
 echo "########################################################"
 
@@ -176,6 +177,14 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB31
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update
 sudo apt-get install -y spotify-client
+
+echo "########################################################"
+echo "              Instalando Simple Weather                 "
+echo "########################################################"
+
+sudo add-apt-repository ppa:kasra-mp/ubuntu-indicator-weather -y
+sudo apt-get update
+sudo apt install indicator-weather
 
 echo "########################################################"
 echo "               Instalando o Workbeanch                  "
