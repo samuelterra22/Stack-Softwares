@@ -35,6 +35,7 @@ echo "#  * PyCharm                                           #"
 echo "#  * DataGrip                                          #"
 echo "#  * Simple Weather                                    #"
 echo "#  * Atom                                              #"
+echo "#  * Pulse Audio Equalizer                             #"
 echo "#                                                      #"
 echo "########################################################"
 
@@ -212,7 +213,16 @@ echo "########################################################"
 notify-send 'Simple Weather' 'Instalando Simple Weather.' --icon=dialog-information
 sudo add-apt-repository ppa:kasra-mp/ubuntu-indicator-weather -y
 sudo apt-get update
-sudo apt install indicator-weather
+sudo apt install indicator-weather -y
+
+echo "########################################################"
+echo "              Instalando Pulse Audio Equalizer          "
+echo "########################################################"
+
+notify-send 'Pulse Audio Equalizer' 'Instalando Pulse Audio Equalizer.' --icon=dialog-information
+sudo add-apt-repository ppa:nilarimogard/webupd8 -y
+sudo apt-get update
+sudo apt-get install pulseaudio-equalizer -y
 
 echo "########################################################"
 echo "               Instalando o Workbeanch                  "
