@@ -34,9 +34,10 @@ echo "#  * Spotify                                           #"
 echo "#  * PhpStorm                                          #"
 echo "#  * PyCharm                                           #"
 echo "#  * DataGrip                                          #"
-echo "#  * Simple Weather                                    #"
+echo "#  * My Weather Indicator                              #"
 echo "#  * Atom                                              #"
 echo "#  * Pulse Audio Equalizer                             #"
+echo "#  * Gimp                                              #"
 echo "#                                                      #"
 echo "########################################################"
 
@@ -208,13 +209,13 @@ sudo apt-get update
 sudo apt-get install atom -y
 
 echo "########################################################"
-echo "              Instalando Simple Weather                 "
+echo "              Instalando My Weather Indicator           "
 echo "########################################################"
 
-notify-send 'Simple Weather' 'Instalando Simple Weather.' --icon=dialog-information
-sudo add-apt-repository ppa:kasra-mp/ubuntu-indicator-weather -y
+notify-send 'My Weather Indicator' 'Instalando My Weather Indicator.' --icon=dialog-information
+sudo add-apt-repository ppa:atareao/atareao -y
 sudo apt-get update
-sudo apt install indicator-weather -y
+sudo apt-get install my-weather-indicator -y
 
 echo "########################################################"
 echo "              Instalando Pulse Audio Equalizer          "
@@ -224,6 +225,14 @@ notify-send 'Pulse Audio Equalizer' 'Instalando Pulse Audio Equalizer.' --icon=d
 sudo add-apt-repository ppa:nilarimogard/webupd8 -y
 sudo apt-get update
 sudo apt-get install pulseaudio-equalizer -y
+
+echo "########################################################"
+echo "              Instalando Gimp                           "
+echo "########################################################"
+
+notify-send 'Gimp' 'Instalando Gimp.' --icon=dialog-information
+sudo apt-get update
+sudo apt-get install gimp -y
 
 echo "########################################################"
 echo "               Instalando o Workbeanch                  "
