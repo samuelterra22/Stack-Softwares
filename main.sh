@@ -38,6 +38,7 @@ echo "#  * My Weather Indicator                              #"
 echo "#  * Atom                                              #"
 echo "#  * Pulse Audio Equalizer                             #"
 echo "#  * Gimp                                              #"
+echo "#  * GParted                                           #"
 echo "#                                                      #"
 echo "########################################################"
 
@@ -235,6 +236,14 @@ sudo apt-get update
 sudo apt-get install gimp -y
 
 echo "########################################################"
+echo "              Instalando GParted                        "
+echo "########################################################"
+
+notify-send 'GParted' 'Instalando GParted.' --icon=dialog-information
+sudo apt-get update
+sudo apt-get install gparted -y
+
+echo "########################################################"
 echo "               Instalando o Workbeanch                  "
 echo "########################################################"
 
@@ -243,7 +252,7 @@ sudo dpkg -i "Workbeanch.deb"
 sudo apt-get install -f
 
 echo "########################################################"
-echo "               Instalando o PhpStorm                  "
+echo "               Instalando o PhpStorm                    "
 echo "########################################################"
 
 notify-send 'PhpStorm' 'Instalando PhpStorm.' --icon=dialog-information
@@ -252,7 +261,7 @@ mv temp/PhpStorm-* temp/PhpStorm/
 sudo mv temp/PhpStorm/ /opt/
 
 echo "########################################################"
-echo "               Instalando o PyCharm                  "
+echo "               Instalando o PyCharm                     "
 echo "########################################################"
 
 notify-send 'PyCharm' 'Instalando PyCharm.' --icon=dialog-information
