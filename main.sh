@@ -120,8 +120,11 @@ echo "		     Instalando dependências do python            "
 echo "########################################################"
 
 notify-send 'Python' 'Instalando Dependências do Python.' --icon=dialog-information
-sudo apt-get update 
-sudo apt-get install -y python-pip python-dev libmysqlclient-dev python3 python3-pip
+sudo add-apt-repository ppa:jonathonf/python-3.6 -y
+sudo apt-get update
+sudo apt-get install -y python-pip python-dev libmysqlclient-dev python3 python3-pip python3.6
+sudo apt-get install -y build-essential libbz2-dev libssl-dev libreadline-dev libsqlite3-dev tk-dev
+sudo apt-get install -y libpng-dev libfreetype6-dev
 sudo pip install --upgrade pip
 sudo pip install setuptools
 sudo pip install MySQL-python
