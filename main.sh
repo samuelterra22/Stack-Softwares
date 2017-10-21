@@ -42,6 +42,7 @@ echo "#  * GParted                                           #"
 echo "#                                                      #"
 echo "########################################################"
 
+notify-send 'Instação iniciada' 'Aperte qualquer tecla para continuar com a instalação ou CTRL+C para cancelar.' --icon=dialog-information
 echo "Aperte qualquer tecla para continuar com a instalação ou CTRL+C para cancelar."
 read nothing
 
