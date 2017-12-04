@@ -39,6 +39,11 @@ echo "#  * Atom                                              #"
 echo "#  * Pulse Audio Equalizer                             #"
 echo "#  * Gimp                                              #"
 echo "#  * GParted                                           #"
+echo "#  * iftop                                             #"
+echo "#  * vnstati                                           #"
+echo "#  * nethogs                                           #"
+echo "#                                                      #"
+echo "#                                                      #"
 echo "#                                                      #"
 echo "########################################################"
 
@@ -246,6 +251,30 @@ echo "########################################################"
 notify-send 'GParted' 'Instalando GParted.' --icon=dialog-information
 sudo apt-get update
 sudo apt-get install gparted -y
+
+echo "########################################################"
+echo "              Instalando iftop                          "
+echo "########################################################"
+
+notify-send 'iftop' 'Instalando iftop.' --icon=dialog-information
+sudo apt-get update
+sudo apt-get install iftop -y
+
+echo "########################################################"
+echo "              Instalando vnstati                          "
+echo "########################################################"
+
+notify-send 'vnstati' 'Instalando vnstati.' --icon=dialog-information
+sudo apt-get update
+sudo apt-get install vnstati -y
+
+echo "########################################################"
+echo "              Instalando nethogs                          "
+echo "########################################################"
+
+notify-send 'nethogs' 'Instalando nethogs.' --icon=dialog-information
+sudo apt-get update
+sudo apt-get install nethogs -y
 
 echo "########################################################"
 echo "               Instalando o Workbeanch                  "
