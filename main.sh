@@ -42,7 +42,8 @@ echo "#  * GParted                                           #"
 echo "#  * iftop                                             #"
 echo "#  * vnstati                                           #"
 echo "#  * nethogs                                           #"
-echo "#                                                      #"
+echo "#  * texlive-full                                      #"
+echo "#  * texstudio                                         #"
 echo "#                                                      #"
 echo "#                                                      #"
 echo "########################################################"
@@ -275,6 +276,14 @@ echo "########################################################"
 notify-send 'nethogs' 'Instalando nethogs.' --icon=dialog-information
 sudo apt-get update
 sudo apt-get install nethogs -y
+
+echo "########################################################"
+echo "              Instalando texlive                        "
+echo "########################################################"
+
+notify-send 'texlive' 'Instalando texlive.' --icon=dialog-information
+sudo apt-get update
+sudo apt-get install -y texlive-full
 
 echo "Instalação dos softwares baixados, verifique se os mesmos estão disponíveis."
 notify-send 'Segunda etapa' 'Instalação dos softwares baixados, verifique se os mesmos estão disponíveis.' --icon=dialog-information
