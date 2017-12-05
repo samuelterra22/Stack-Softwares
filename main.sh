@@ -312,7 +312,7 @@ echo "########################################################"
 
 notify-send 'PyCharm' 'Instalando PyCharm.' --icon=dialog-information
 tar -xzvf PyCharm.tar.gz -C temp/
-mv temp/PhpStorm-* temp/PyCharm/
+mv temp/pycharm-* temp/PyCharm/
 sudo mv temp/PyCharm/ /opt/
 
 echo "########################################################"
