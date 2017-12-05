@@ -16,7 +16,7 @@ echo "########################################################"
 echo "#                                                      #"
 echo "#  Os seguintes pacotes serão instalados:              #"
 echo "#                                                      #"
-echo "#  * PHP 7.1                                           #"
+echo "#  * PHP 7.2                                           #"
 echo "#  * Apache2                                           #"
 echo "#  * MySql                                             #"
 echo "#  * MySql Workbench                                   #"
@@ -97,10 +97,10 @@ notify-send 'LAMP' 'Instalando PHP e Apache.' --icon=dialog-information
 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt-get update
 
-sudo apt-get install -y php7.1-mbstring php7.1-xml libapache2-mod-php php7.1-cli php7.1-common libapache2-mod-php7.1 php7.1 php7.1-mysql php7.1-fpm php7.1-curl php7.1-gd php7.1-bz2 apache2
+sudo apt-get install -y php7.2-mbstring php7.2-xml libapache2-mod-php php7.2-cli php7.2-common libapache2-mod-php7.2 php7.1 php7.2-mysql php7.2-fpm php7.2-curl php7.2-gd php7.2-bz2 apache2
 
-# Ativando php7.1 module
-sudo a2enmod php7.1
+# Ativando php7.2 module
+sudo a2enmod php7.2
 
 # Ativando mod rewrite
 sudo a2enmod rewrite
