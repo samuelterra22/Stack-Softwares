@@ -187,7 +187,7 @@ echo "                   Instalando R                         "
 echo "########################################################"
 
 notify-send 'R' 'Instalando R.' --icon=dialog-information
-sudo apt install -f r-base-core
+sudo apt install -y -f r-base-core
 
 echo "########################################################"
 echo "              Instalando Sublime-text                   "
@@ -275,6 +275,10 @@ echo "########################################################"
 notify-send 'nethogs' 'Instalando nethogs.' --icon=dialog-information
 sudo apt-get update
 sudo apt-get install nethogs -y
+
+echo "Instalação dos softwares baixados, verifique se os mesmos estão disponíveis."
+notify-send 'Segunda etapa' 'Instalação dos softwares baixados, verifique se os mesmos estão disponíveis.' --icon=dialog-information
+read nothing
 
 echo "########################################################"
 echo "               Instalando o Workbeanch                  "
