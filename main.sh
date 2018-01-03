@@ -39,9 +39,9 @@ echo "#  * Atom                                              #"
 echo "#  * Pulse Audio Equalizer                             #"
 echo "#  * Gimp                                              #"
 echo "#  * GParted                                           #"
-echo "#  * iftop                                             #"
-echo "#  * vnstati                                           #"
-echo "#  * nethogs                                           #"
+echo "#  * iftop (Monitor de rede)                           #"
+echo "#  * vnstati (Monitor do tráfego de rede)              #"
+echo "#  * nethogs (Monitor consumo de dados por processo)   #"
 echo "#  * texlive-full                                      #"
 echo "#  * texstudio                                         #"
 echo "#                                                      #"
@@ -257,15 +257,15 @@ echo "########################################################"
 echo "              Instalando iftop                          "
 echo "########################################################"
 
-notify-send 'iftop' 'Instalando iftop.' --icon=dialog-information
+notify-send 'iftop' 'Instalando iftop (Monitor de rede).' --icon=dialog-information
 sudo apt-get update
 sudo apt-get install iftop -y
 
 echo "########################################################"
-echo "              Instalando vnstati                          "
+echo "              Instalando vnstati                        "
 echo "########################################################"
 
-notify-send 'vnstati' 'Instalando vnstati.' --icon=dialog-information
+notify-send 'vnstati' 'Instalando vnstati (Monitor do tráfego de rede).' --icon=dialog-information
 sudo apt-get update
 sudo apt-get install vnstati -y
 
@@ -273,7 +273,7 @@ echo "########################################################"
 echo "              Instalando nethogs                          "
 echo "########################################################"
 
-notify-send 'nethogs' 'Instalando nethogs.' --icon=dialog-information
+notify-send 'nethogs' 'Instalando nethogs (Monitor consumo de dados por processo).' --icon=dialog-information
 sudo apt-get update
 sudo apt-get install nethogs -y
 
