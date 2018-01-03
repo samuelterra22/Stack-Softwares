@@ -18,7 +18,7 @@ echo "#  Os seguintes pacotes serão instalados:              #"
 echo "#                                                      #"
 echo "#  * PHP 7.2                                           #"
 echo "#  * Apache2                                           #"
-echo "#  * MySql                                             #"
+echo "#  * MariaDB                                           #"
 echo "#  * MySql Workbench                                   #"
 echo "#  * Python 3                                          #"
 echo "#  * htop                                              #"
@@ -106,14 +106,17 @@ sudo a2enmod php7.2
 sudo a2enmod rewrite
 
 echo "########################################################"
-echo "		   Configurando MYSQL - Password: 'root'          "
+echo "		   Instalando MariaDB                             "
 echo "########################################################"
 
-notify-send 'LAMP' 'Instalando MySql.' --icon=dialog-information
-# Seta o usuário e senha do MySQL para root
-echo "mysql-server-5.7 mysql-server/root_password password root" | debconf-set-selections
-echo "mysql-server-5.7 mysql-server/root_password_again password root" | debconf-set-selections
-sudo apt-get -y install mysql-server-5.7
+notify-send 'LAMP' 'Instalando MariaDB.' --icon=dialog-information
+
+sudo apt-get -y install software-properties-common
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://ftp.utexas.edu/mariadb/repo/10.2/ubuntu xenial main'
+sudo apt-get update
+sudo apt-get -y install mariadb-server mariadb-client
+sudo /etc/init.d/mysql restart
 
 echo -e "\n"
 
