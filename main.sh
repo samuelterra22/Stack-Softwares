@@ -22,6 +22,7 @@ echo "#  * MariaDB                                           #"
 echo "#  * MySql Workbench                                   #"
 echo "#  * Python 3                                          #"
 echo "#  * htop                                              #"
+echo "#  * gtop                                              #"
 echo "#  * zip                                               #"
 echo "#  * rar                                               #"
 echo "#  * unrar                                             #"
@@ -151,12 +152,14 @@ sudo apt-get -y -q install rar
 sudo apt-get -y -q install unrar
 
 echo "########################################################"
-echo "           Instalando monitorador de processos          "
+echo "           Instalando monitores de processos            "
 echo "########################################################"
 
-notify-send 'htop' 'Instalando monitorador de processos.' --icon=dialog-information
-
+notify-send 'htop e gtop' 'Instalando monitores de processos.' --icon=dialog-information
 sudo apt install -y htop
+sudo apt-get install nodejs-legacy
+sudo apt-get install apt install npm
+sudo npm install gtop -g
 
 echo "########################################################"
 echo "                Instalando o SpeedTest                  "
