@@ -158,7 +158,7 @@ echo "########################################################"
 notify-send 'htop e gtop' 'Instalando monitores de processos.' --icon=dialog-information
 sudo apt install -y htop
 sudo apt-get install nodejs-legacy
-sudo apt-get install apt install npm
+sudo apt-get install npm
 sudo npm install gtop -g
 
 echo "########################################################"
