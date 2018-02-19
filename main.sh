@@ -194,7 +194,9 @@ echo "                   Instalando R                         "
 echo "########################################################"
 
 notify-send 'R' 'Instalando R.' --icon=dialog-information
-sudo apt install -y -f r-base-core
+sudo add-apt-repository -y 'deb https://ftp.ussg.iu.edu/CRAN/bin/linux/ubuntu trusty/'
+sudo apt-get update
+sudo apt install -y -f r-base-core r-base-dev
 
 echo "########################################################"
 echo "              Instalando Sublime-text                   "
