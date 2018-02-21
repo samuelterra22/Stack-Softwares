@@ -359,4 +359,3 @@ else
     notify-send 'Instalação terminada!' 'A instalação terminou e todos os serviços foram instalados!\nÉ recomendado que reinicie o computador. \n\nObrigado pela preferência!' --icon=face-cool
     echo "Serviços instalados estão sendo executados com $(tput bold)$(tput setaf 2)sucesso$(tput sgr0)"
 fi
-
