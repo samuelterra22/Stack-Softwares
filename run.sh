@@ -45,7 +45,7 @@ echo "#  * vnstati (Monitor do tráfego de rede)              #"
 echo "#  * nethogs (Monitor consumo de dados por processo)   #"
 echo "#  * texlive-full (Latex)                              #"
 echo "#  * texstudio                                         #"
-echo "#                                                      #"
+echo "#  * Telegram                                          #"
 echo "#                                                      #"
 echo "########################################################"
 
@@ -292,6 +292,15 @@ echo "########################################################"
 notify-send 'texlive' 'Instalando texlive.' --icon=dialog-information
 sudo apt-get update
 sudo apt-get install -y texlive-full
+
+echo "########################################################"
+echo "              Instalando Telegram                       "
+echo "########################################################"
+
+notify-send 'Telegram' 'Instalando Telegram.' --icon=dialog-information
+sudo add-apt-repository ppa:atareao/telegram -y
+sudo apt-get update
+sudo apt-get install -y telegram
 
 echo "Instalação dos softwares baixados, verifique se os mesmos estão disponíveis."
 notify-send 'Segunda etapa' 'Instalação dos softwares baixados, verifique se os mesmos estão disponíveis.' --icon=dialog-information
