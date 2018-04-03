@@ -46,6 +46,7 @@ echo "#  * nethogs (Monitor consumo de dados por processo)   #"
 echo "#  * texlive-full (Latex)                              #"
 echo "#  * texstudio                                         #"
 echo "#  * Telegram                                          #"
+echo "#  * Docker | Docker Compose                           #"
 echo "#                                                      #"
 echo "########################################################"
 
@@ -301,6 +302,23 @@ notify-send 'Telegram' 'Instalando Telegram.' --icon=dialog-information
 sudo add-apt-repository ppa:atareao/telegram -y
 sudo apt-get update
 sudo apt-get install -y telegram
+
+echo "########################################################"
+echo "              Instalando Docker                         "
+echo "########################################################"
+
+notify-send 'Docker' 'Instalando Docker.' --icon=dialog-information
+sudo apt-get -y remove docker docker-engine docker.io
+sudo apt-get -y update
+sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update
+sudo apt-get install docker-ce
+sudo curl -L https://github.com/docker/compose/releases/download/1.20.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
 
 echo "Instalação dos softwares baixados, verifique se os mesmos estão disponíveis."
 notify-send 'Segunda etapa' 'Instalação dos softwares baixados, verifique se os mesmos estão disponíveis.' --icon=dialog-information
