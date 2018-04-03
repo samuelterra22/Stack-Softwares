@@ -46,7 +46,7 @@ echo "#  * nethogs (Monitor consumo de dados por processo)   #"
 echo "#  * texlive-full (Latex)                              #"
 echo "#  * texstudio                                         #"
 echo "#  * Telegram                                          #"
-echo "#  * Docker | Docker Compose                           #"
+echo "#  * Docker | Docker Compose | Ambientum               #"
 echo "#                                                      #"
 echo "########################################################"
 
@@ -308,6 +308,8 @@ echo "              Instalando Docker                         "
 echo "########################################################"
 
 notify-send 'Docker' 'Instalando Docker.' --icon=dialog-information
+curl -L https://github.com/codecasts/ambientum/raw/master/commands.bash -o ~/.ambientum_rc
+source ~/.ambientum_rc
 sudo apt-get -y remove docker docker-engine docker.io
 sudo apt-get -y update
 sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
