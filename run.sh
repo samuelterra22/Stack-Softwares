@@ -40,6 +40,7 @@ echo "#  * Atom                                              #"
 echo "#  * Pulse Audio Equalizer                             #"
 echo "#  * Gimp                                              #"
 echo "#  * GParted                                           #"
+echo "#  * Nodejs e npm                                      #"
 echo "#  * iftop (Monitor de rede)                           #"
 echo "#  * vnstati (Monitor do tráfego de rede)              #"
 echo "#  * nethogs (Monitor consumo de dados por processo)   #"
@@ -153,13 +154,27 @@ sudo apt-get -y -q install rar
 sudo apt-get -y -q install unrar
 
 echo "########################################################"
+echo "           Instalando Nodejs                            "
+echo "########################################################"
+
+notify-send 'Nodejs' 'Instalando Nodejs.' --icon=dialog-information
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt-get install -y build-essential
+sudo chown -R $USER ~/.npm
+sudo chown -R $USER /usr/lib/node_modules
+sudo chown -R $USER /usr/local/lib/node_modules
+sudo npm install -g npm@latest
+nodejs -v
+node -v
+npm -v
+
+echo "########################################################"
 echo "           Instalando monitores de processos            "
 echo "########################################################"
 
 notify-send 'htop e gtop' 'Instalando monitores de processos.' --icon=dialog-information
 sudo apt install -y htop
-sudo apt-get install nodejs-legacy
-sudo apt-get install npm
 sudo npm install gtop -g
 
 echo "########################################################"
