@@ -320,6 +320,11 @@ sudo apt-get update
 sudo apt-get install docker-ce
 sudo curl -L https://github.com/docker/compose/releases/download/1.20.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+sudo chmod g+rwx "/home/$USER/.docker" -R
+sudo systemctl enable docker
 docker-compose --version
 
 echo "Instalação dos softwares baixados, verifique se os mesmos estão disponíveis."
