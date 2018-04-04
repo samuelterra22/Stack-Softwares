@@ -48,6 +48,7 @@ echo "#  * texlive-full (Latex)                              #"
 echo "#  * texstudio                                         #"
 echo "#  * Telegram                                          #"
 echo "#  * Docker | Docker Compose | Ambientum               #"
+echo "#  * Postman                                           #"
 echo "#                                                      #"
 echo "########################################################"
 
@@ -341,6 +342,24 @@ sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 sudo chmod g+rwx "/home/$USER/.docker" -R
 sudo systemctl enable docker
 docker-compose --version
+
+echo "########################################################"
+echo "              Instalando Postman                        "
+echo "########################################################"
+
+notify-send 'Postman' 'Instalando Postman.' --icon=dialog-information
+wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
+sudo tar -xzf postman.tar.gz -C /opt
+rm postman.tar.gz
+sudo ln -s /opt/Postman/Postman /usr/bin/postman
+echo "[Desktop Entry] \
+Encoding=UTF-8 \
+Name=Postman \
+Exec=postman \
+Icon=/opt/Postman/resources/app/assets/icon.png \
+Terminal=false \
+Type=Application \
+Categories=Development;" > ~/.local/share/applications/postman.desktop
 
 echo "Instalação dos softwares baixados, verifique se os mesmos estão disponíveis."
 notify-send 'Segunda etapa' 'Instalação dos softwares baixados, verifique se os mesmos estão disponíveis.' --icon=dialog-information
