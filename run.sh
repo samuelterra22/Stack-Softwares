@@ -352,14 +352,14 @@ wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
 sudo tar -xzf postman.tar.gz -C /opt
 rm postman.tar.gz
 sudo ln -s /opt/Postman/Postman /usr/bin/postman
-echo "[Desktop Entry] \
-Encoding=UTF-8 \
-Name=Postman \
-Exec=postman \
-Icon=/opt/Postman/resources/app/assets/icon.png \
-Terminal=false \
-Type=Application \
-Categories=Development;" > ~/.local/share/applications/postman.desktop
+echo '[Desktop Entry] 
+Encoding=UTF-8 
+Name=Postman 
+Exec=postman 
+Icon=/opt/Postman/resources/app/assets/icon.png 
+Terminal=false 
+Type=Application 
+Categories=Development;' > ~/.local/share/applications/postman.desktop
 
 echo "Instalação dos softwares baixados, verifique se os mesmos estão disponíveis."
 notify-send 'Segunda etapa' 'Instalação dos softwares baixados, verifique se os mesmos estão disponíveis.' --icon=dialog-information
